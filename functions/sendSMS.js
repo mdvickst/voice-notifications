@@ -4,9 +4,9 @@ exports.handler = async function (context, event, callback) {
   const axios = require('axios');
 
   // Query parameters or values sent in a POST body can be accessed from `event`
-  const from = event.From || '+19197377453';
-  const to = event.To || '+19786783416';
-  const body = event.Body || 'Hello, your table is ready now.';
+  const from = event.From;
+  const to = event.To;
+  const body = event.Body;
 
   twilioClient.messages
     .create({ body, to, from, statusCallback: `${context.BASE_URL}/smsStatusCallback` })
