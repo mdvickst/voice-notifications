@@ -61,8 +61,8 @@ _Below is an example of how you can instruct your audience on installing and set
 4. Create Twilio Event Sink using the Function domain created in the previous step
    ```sh
    twilio api:events:v1:sinks:create --description "SMS Undelivered Sink" \
---sink-configuration '{"destination":"https://${function_domain}/eventStreamWebhook","method":"POST","batch_events":false}' \
---sink-type webhook
+    --sink-configuration '{"destination":"https://${function_domain}/eventStreamWebhook","method":"POST","batch_events":false}' \
+    --sink-type webhook
    ```
    
 5. Create Event Streams Susbcription using the Sink SID from the previous ttep
