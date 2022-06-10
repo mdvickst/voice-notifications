@@ -29,7 +29,7 @@ exports.handler = function (context, event, callback) {
         .then(message => {
           // send a voice notification with that same body
           axios
-            .post(`${context.BASE_URL}/sendVoiceNotification`, {
+            .post('/sendVoiceNotification', {
               From: event.From,
               To: event.To,
               Body: message.body

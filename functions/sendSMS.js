@@ -9,7 +9,7 @@ exports.handler = async function (context, event, callback) {
   const body = event.Body;
 
   twilioClient.messages
-    .create({ body, to, from, statusCallback: `${context.BASE_URL}/smsStatusCallback` })
+    .create({ body, to, from, statusCallback: '/smsStatusCallback' })
     .then((message) => {
       console.log('SMS successfully sent');
       console.log(message.sid);
@@ -21,7 +21,7 @@ exports.handler = async function (context, event, callback) {
       if (error.code != null && error.code == '21610') {
         // for unsubscribes send voice notification
         axios
-          .post(`${context.BASE_URL}/sendVoiceNotification`, {
+          .post('/sendVoiceNotification', {
             From: from,
             To: to,
             Body: body
