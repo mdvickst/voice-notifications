@@ -2,7 +2,7 @@ exports.handler = function (context, event, callback) {
     const from = event.From;
     const to = event.To;
     const body = event.Body;
-    const twiml = `<Response><Say>${body}</Say></Response>`;
+    const twiml = `<Response><Say voice="Polly.Kimberly-Neural">${body}</Say></Response>`;
 
     const twilioClient = context.getTwilioClient();
 

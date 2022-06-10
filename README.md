@@ -1,7 +1,7 @@
 <div id="top"></div>
 
 <!-- TABLE OF CONTENTS -->
-  <summary>Table of Contents</summary>
+ ## Table of Contents
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
